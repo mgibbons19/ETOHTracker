@@ -1,0 +1,36 @@
+ICONS NEEDED FOR PWA
+====================
+
+You need to create two icon files:
+
+1. icon-192.png (192x192 pixels)
+2. icon-512.png (512x512 pixels)
+
+EASY OPTIONS:
+-------------
+
+Option 1: Use an Emoji
+- Open any design tool (Canva, Figma, etc.)
+- Use a glass emoji 🍷 or 🍺
+- Export as PNG at the sizes above
+
+Option 2: Simple Design
+- Solid color background (e.g., #2563eb - the app's blue)
+- White letter "D" for Drinks in the center
+- Clean, minimal design
+
+Option 3: Online Generators
+- Use tools like:
+  - favicon.io (can generate from emoji)
+  - realfavicongenerator.net
+  - iconifier.net
+
+Once created, place both files in the root directory:
+- icon-192.png
+- icon-512.png
+
+The app will work without these, but they're needed for:
+- Home screen icon when installed
+- App launcher icon
+- Notification icons
+- Professional appearance

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2563eb">
+    
+    <title>Stats - Alcohol Tracker</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-link">Log</a>
+            <a href="stats.html" class="nav-link active">Stats</a>
+            <a href="settings.html" class="nav-link">Settings</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Period Selector -->
+        <div class="card">
+            <div class="period-selector">
+                <button class="btn btn-secondary period-btn active" data-period="month">This Month</button>
+                <button class="btn btn-secondary period-btn" data-period="year">This Year</button>
+            </div>
+        </div>
+        
+        <!-- Month Stats -->
+        <div id="monthStats" class="stats-view">
+            <div class="card">
+                <h2 id="monthTitle">Loading...</h2>
+                <div id="monthStatsContent" class="stats-grid">
+                    <p class="loading">Loading statistics...</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Year Stats -->
+        <div id="yearStats" class="stats-view" style="display: none;">
+            <div class="card">
+                <h2 id="yearTitle">Loading...</h2>
+                <div id="yearStatsContent" class="stats-grid">
+                    <p class="loading">Loading statistics...</p>
+                </div>
+            </div>
+            
+            <!-- Monthly Breakdown -->
+            <div class="card">
+                <h3>Monthly Breakdown</h3>
+                <div id="monthlyBreakdown" class="monthly-breakdown">
+                    <p class="loading">Loading breakdown...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="stats.js"></script>
+</body>
+</html>

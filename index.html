@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="description" content="Track your alcohol consumption">
+    
+    <title>Alcohol Tracker</title>
+    
+    <!-- PWA manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-link active">Log</a>
+            <a href="stats.html" class="nav-link">Stats</a>
+            <a href="settings.html" class="nav-link">Settings</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="card">
+            <h1>Log Your Drinks</h1>
+            <p class="subtitle">How many drinks did you have?</p>
+            
+            <form id="logForm" class="log-form">
+                <div class="form-group">
+                    <label for="logDate">Date</label>
+                    <input 
+                        type="date" 
+                        id="logDate" 
+                        name="logDate" 
+                        required
+                        class="input"
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="drinkCount">Number of Drinks</label>
+                    <div class="number-input-wrapper">
+                        <button type="button" class="btn-stepper" id="decreaseBtn">−</button>
+                        <input 
+                            type="number" 
+                            id="drinkCount" 
+                            name="drinkCount" 
+                            min="0" 
+                            max="50"
+                            value="0"
+                            required
+                            class="input number-input"
+                        >
+                        <button type="button" class="btn-stepper" id="increaseBtn">+</button>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" id="submitBtn">
+                    Log Entry
+                </button>
+            </form>
+            
+            <div id="message" class="message"></div>
+        </div>
+        
+        <!-- Recent Entries -->
+        <div class="card">
+            <h2>Recent Entries</h2>
+            <div id="recentEntries" class="recent-entries">
+                <p class="loading">Loading...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+    
+    <!-- Register Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(reg => console.log('Service Worker registered'))
+                .catch(err => console.log('Service Worker registration failed', err));
+        }
+    </script>
+</body>
+</html>

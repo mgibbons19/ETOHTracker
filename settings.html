@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2563eb">
+    
+    <title>Settings - Alcohol Tracker</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-link">Log</a>
+            <a href="stats.html" class="nav-link">Stats</a>
+            <a href="settings.html" class="nav-link active">Settings</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="card">
+            <h1>Settings</h1>
+            
+            <form id="settingsForm" class="settings-form">
+                <div class="form-group">
+                    <label for="costPerDrink">Cost Per Drink ($)</label>
+                    <input 
+                        type="number" 
+                        id="costPerDrink" 
+                        name="costPerDrink" 
+                        min="0" 
+                        max="100"
+                        step="0.5"
+                        value="3"
+                        required
+                        class="input"
+                    >
+                    <p class="help-text">Used to calculate total spending on alcohol</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dailyTarget">Daily Target Drinks</label>
+                    <input 
+                        type="number" 
+                        id="dailyTarget" 
+                        name="dailyTarget" 
+                        min="0" 
+                        max="20"
+                        value="0"
+                        required
+                        class="input"
+                    >
+                    <p class="help-text">Your goal for maximum drinks per day (0 = no drinking)</p>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" id="saveBtn">
+                    Save Settings
+                </button>
+            </form>
+            
+            <div id="message" class="message"></div>
+        </div>
+        
+        <!-- About Section -->
+        <div class="card">
+            <h2>About</h2>
+            <p>This app helps you track your alcohol consumption and spending. All data is stored in your personal Google Sheet.</p>
+            <p class="version">Version 1.0.0</p>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="settings-page.js"></script>
+</body>
+</html>
