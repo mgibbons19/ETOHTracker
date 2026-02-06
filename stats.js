@@ -73,16 +73,14 @@ async function loadStats(period) {
 async function getMonthStats(month, year) {
     const response = await fetch(API_URL, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
         body: JSON.stringify({
             action: 'getMonthStats',
             month: month,
             year: year
-        })
+        }),
+        redirect: 'follow'
     });
-    
+
     return await response.json();
 }
 
@@ -90,15 +88,13 @@ async function getMonthStats(month, year) {
 async function getYearStats(year) {
     const response = await fetch(API_URL, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
         body: JSON.stringify({
             action: 'getYearStats',
             year: year
-        })
+        }),
+        redirect: 'follow'
     });
-    
+
     return await response.json();
 }
 
