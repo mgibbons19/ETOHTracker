@@ -7,6 +7,8 @@
 // https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec
 const API_URL = 'https://script.google.com/macros/s/AKfycbyilOyrKl4RCKVybGqQ2yRCHJZ79yvX5aJo6oRDbf5RhwdJjqUAKmPH4Xy20NUMYYVq/exec';
 
+
+                
 // Check if API URL is configured
 if (API_URL === 'YOUR_APPS_SCRIPT_URL_HERE') {
     console.warn('⚠️ API URL not configured! Please update config.js with your Google Apps Script deployment URL.');
