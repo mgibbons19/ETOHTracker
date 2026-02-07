@@ -93,16 +93,14 @@ async function handleSubmit(e) {
 async function logDrinks(date, drinks) {
     const response = await fetch(API_URL, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
         body: JSON.stringify({
             action: 'logDrinks',
             date: date,
             drinks: drinks
-        })
+        }),
+        redirect: 'follow'
     });
-    
+
     return await response.json();
 }
 
@@ -110,15 +108,13 @@ async function logDrinks(date, drinks) {
 async function getRecentEntries(days = 30) {
     const response = await fetch(API_URL, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
         body: JSON.stringify({
             action: 'getRecentEntries',
             days: days
-        })
+        }),
+        redirect: 'follow'
     });
-    
+
     return await response.json();
 }
 

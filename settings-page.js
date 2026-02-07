@@ -24,14 +24,12 @@ function setupEventListeners() {
 async function getSettings() {
     const response = await fetch(API_URL, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
         body: JSON.stringify({
             action: 'getSettings'
-        })
+        }),
+        redirect: 'follow'
     });
-    
+
     return await response.json();
 }
 
@@ -39,16 +37,14 @@ async function getSettings() {
 async function updateSetting(settingName, value) {
     const response = await fetch(API_URL, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
         body: JSON.stringify({
             action: 'updateSetting',
             settingName: settingName,
             value: value
-        })
+        }),
+        redirect: 'follow'
     });
-    
+
     return await response.json();
 }
 
